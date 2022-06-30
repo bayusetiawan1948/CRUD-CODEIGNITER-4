@@ -46,6 +46,19 @@
                 </select>
               </div>
               <div class="mb-3">
+                <label class="form-label">Divisi</label>
+                <select class="form-select" aria-label="Default select example" id="divisi" name="divisi">
+                  <option selected>Pilih Divisi</option>
+                  <?php foreach ($divisi as $key => $item) : ?>
+                    <?php if ($item->divisi_id == $data['divisi']) { ?>
+                      <option value="<?= $item->divisi_id ?>" name="divisi" selected><?= $item->nama_divisi ?></option>
+                    <?php } else { ?>
+                      <option value="<?= $item->divisi_id ?>" name="divisi"><?= $item->nama_divisi ?></option>
+                    <?php  }  ?>
+                  <?php endforeach; ?>
+                </select>
+              </div>
+              <div class="mb-3">
                 <label for="tmpt-lahir" class="form-label">Tempat Lahir Karyawan</label>
                 <input type="text" class="form-control" id="tmpt-lahir" placeholder="Masukan tempat lahir karyawan" name="tempat_lahir" value="<?= $data['tempat_lahir'] ?>">
               </div>

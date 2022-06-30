@@ -4,9 +4,8 @@
     <tr>
       <th scope="col">No</th>
       <th scope="col">NIK</th>
-      <th scope="col">Divisi</th>
       <th scope="col">Nama</th>
-      <th scope="col">Jenis Kelamin</th>
+      <th scope="col">jenis Kelamin</th>
       <th scope="col">Tempat Lahir</th>
       <th scope="col">Tanggal Lahir</th>
       <th scope="col">Alamat</th>
@@ -18,7 +17,6 @@
       <tr>
         <th scope="row"><?= ++$key ?></th>
         <td><?= $item['nik'] ?></td>
-        <td><?= $item['divisi'] ?></td>
         <td><?= $item['nama'] ?></td>
         <td><?= $item['jenkel'] ?></td>
         <td><?= $item['tempat_lahir'] ?></td>

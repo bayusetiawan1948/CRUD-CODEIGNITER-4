@@ -18,46 +18,17 @@
     <div class="row">
       <div class="col-9 m-5">
         <h2 class="m-auto"><?= $judul ?></h2>
-        <form action="<?= base_url('/store') ?>" method="post">
+        <form action="<?= base_url('/divisi/store') ?>" method="post">
           <?= csrf_field(); ?>
           <div class="card mt-3" style="width: 32rem;">
             <div class="card-body">
               <div class="mb-3">
-                <label for="nik" class="form-label">NIK Karyawan</label>
-                <input type="text" class="form-control" id="nik" placeholder="Masukan NIK karyawan" name="nik">
+                <label for="nik" class="form-label">Kode Divisi</label>
+                <input type="text" class="form-control" id="divisiid" placeholder="Masukan kode divisi" name="divisiid">
               </div>
               <div class="mb-3">
-                <label for="nama" class="form-label">Nama Karyawan</label>
-                <input type="text" class="form-control" id="nama" placeholder="Masukan nama karyawan" name="nama">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Jenis Kelamin</label>
-                <select class="form-select" aria-label="Default select example" id="jenkel" name="jenkel">
-                  <option selected>Pilih jenis kelamin</option>
-                  <option value="L">Laki-laki</option>
-                  <option value="P">Perempuan</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Divisi</label>
-                <select class="form-select" aria-label="Default select example" id="divisi" name="divisi">
-                  <option selected>Pilih Divisi</option>
-                  <?php foreach ($divisi as $key => $item) : ?>
-                    <option value="<?= $item->divisi_id ?>" name="divisi"><?= $item->nama_divisi ?></option>
-                  <?php endforeach; ?>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="tmpt-lahir" class="form-label">Tempat Lahir Karyawan</label>
-                <input type="text" class="form-control" id="tmpt-lahir" placeholder="Masukan tempat lahir karyawan" name="tempat_lahir">
-              </div>
-              <div class="mb-3">
-                <label for="tgl-lahir" class="form-label">Tanggal Lahir Karyawan</label>
-                <input type="date" class="form-control" id="tgl-lahir" placeholder="Masukan tanggal lahir karyawan" name="tgl_lahir">
-              </div>
-              <div class="mb-3">
-                <label for="alamat" class="form-label">Alamat Karyawan</label>
-                <textarea class="form-control" id="alamat" rows="3" placeholder="Alamt Karyawan" name="alamat"></textarea>
+                <label for="nama" class="form-label">Nama Divisi</label>
+                <input type="text" class="form-control" id="namadivisi" placeholder="Masukan nama divisi" name="namadivisi">
               </div>
             </div>
             <div class="card-footer">

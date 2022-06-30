@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Config\Database;
 use CodeIgniter\Model;
 
 class Karyawan extends Model
@@ -20,7 +21,8 @@ class Karyawan extends Model
     'jenkel',
     'tempat_lahir',
     'tgl_lahir',
-    'alamat'
+    'alamat',
+    'divisi'
   ];
 
   protected $useTimestamps = false;
@@ -31,4 +33,12 @@ class Karyawan extends Model
   protected $validationRules    = [];
   protected $validationMessages = [];
   protected $skipValidation     = false;
+
+  public function getDivisi()
+  {
+    $db      = \Config\Database::connect();
+    $builder = $db->table('tbl_karyawan');
+    $query   = $builder->get();
+    return $query;
+  }
 }

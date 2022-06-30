@@ -13,13 +13,13 @@
 </head>
 
 <body>
-  <?= $this->include('/components/navbar') ?>
+  <?= $this->include('/components/navbar.php') ?>
   <div class="container">
     <div class="row">
       <div class="col-9 m-5">
-        <h2 class="m-auto">Table Karyawan</h2>
-        <?= $this->include('components/flash_notification') ?>
-        <a href="<?= base_url('/create') ?>">
+        <h2 class="m-auto">Table Divisi</h2>
+        <?= $this->include('/components/flash_notification') ?>
+        <a href="<?= base_url('/divisi/create') ?>">
           <button class="my-2 btn btn-primary">Tambah Data</button>
         </a>
         <div id="read" class="table-responsive">
@@ -27,13 +27,8 @@
             <thead>
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">NIK</th>
-                <th scope="col">Divisi</th>
-                <th scope="col">Nama</th>
-                <th scope="col">jenis Kelamin</th>
-                <th scope="col">Tempat Lahir</th>
-                <th scope="col">Tanggal Lahir</th>
-                <th scope="col">Alamat</th>
+                <th scope="col">Divisi id</th>
+                <th scope="col">Nama Divisi</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -41,18 +36,13 @@
               <?php foreach ($data as $key => $item) : ?>
                 <tr>
                   <td><?= ++$key ?></td>
-                  <td><?= $item['nik'] ?></td>
-                  <td><?= $item['divisi'] ?></td>
-                  <td><?= $item['nama'] ?></td>
-                  <td><?= $item['jenkel'] ?></td>
-                  <td><?= $item['tempat_lahir'] ?></td>
-                  <td><?= $item['tgl_lahir'] ?></td>
-                  <td><?= $item['alamat'] ?></td>
+                  <td><?= $item['divisi_id'] ?></td>
+                  <td><?= $item['nama_divisi'] ?></td>
                   <td class="p-3 d-flex flex-row justify-content-ceneter">
-                    <a href="<?= base_url('/edit/' . $item['nik']) ?>">
+                    <a href="<?= base_url('/divisi/edit/' . $item['divisi_id']) ?>">
                       <button class="btn btn-success">Edit</button>
                     </a>
-                    <a href="<?= base_url('/delete/' . $item['nik']) ?>">
+                    <a href="<?= base_url('/divisi/delete/' . $item['divisi_id']) ?>">
                       <button class="btn btn-danger ms-2">Delete</button>
                     </a>
                   </td>

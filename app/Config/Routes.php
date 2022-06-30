@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('KaryawanController');
+$routes->setDefaultController('home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -31,6 +31,8 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+//karyawan
 $routes->get('/', 'KaryawanController::index');
 $routes->get('/create', 'KaryawanController::create');
 $routes->post('/store', 'KaryawanController::store');
@@ -38,6 +40,14 @@ $routes->get('/edit/(:segment)', 'KaryawanController::edit/$1');
 $routes->post('/update/(:segment)', 'KaryawanController::update/$1');
 $routes->get('/delete/(:segment)', 'KaryawanController::destroy/$1');
 
+
+//divisi
+$routes->get('/divisi/', 'DivisiController::index', ['as' => 'index_divisi']);
+$routes->get('/divisi/create', 'DivisiController::create');
+$routes->post('/divisi/store', 'DivisiController::store');
+$routes->get('/divisi/edit/(:segment)', 'DivisiController::edit/$1');
+$routes->post('/divisi/update/(:segment)', 'DivisiController::update/$1');
+$routes->get('/divisi/delete/(:segment)', 'DivisiController::destroy/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
